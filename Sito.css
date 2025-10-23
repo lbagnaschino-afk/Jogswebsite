@@ -1,0 +1,300 @@
+/* Base */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+/* Header */
+header {
+    position: relative;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #0ff;
+    overflow: hidden;
+}
+
+/* Sfondo sfocato con logo */
+header .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('logo.jpg') no-repeat center center/cover;
+    filter: blur(6px) brightness(0.4);
+    z-index: 1;
+}
+
+/* Titolo JOGS */
+header h1 {
+    position: relative;
+    z-index: 2;
+    font-family: 'Rock Salt', cursive;
+    font-size: 4rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 40px #000000;
+    letter-spacing: 3px;
+    margin-bottom: 5px;
+}
+
+/* Sottotitolo */
+header p {
+    position: relative;
+    z-index: 2;
+    color: #e0ffff;
+    font-size: 1.5rem;
+    text-shadow: 0 0 6px #000000;
+    margin-top: -5px;
+}
+
+footer {
+    text-align: center;         /* centra tutto */
+    background-color: #000;     /* mantiene il tema dark */
+    color: #fff;
+    padding: 20px;
+    border-top: 1px solid #0ff; /* leggero bordo neon */
+}
+
+footer a {
+    color: #0ff;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Nav */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: #111;
+    padding: 10px 0;
+}
+
+nav button {
+    background: none;
+    border: 1px solid #0ff;
+    color: #0ff;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav button:hover {
+    background-color: #0ff;
+    color: #000;
+}
+
+/* Main */
+main {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #0ff;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Members */
+.members {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.member {
+    background-color: #111;
+    flex: 1 1 calc(33.333% - 40px); /* 3 per riga con spazio tra */
+    max-width: 300px; /* limita la larghezza massima */
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 10px #0ff;
+    transition: 0.3s ease;
+}
+
+.member:hover {
+    box-shadow: 0 0 25px #0ff;
+    transform: scale(1.03);
+}
+
+.member img {
+    width: 100%;
+    aspect-ratio: 5 / 7;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 10px;
+}
+
+.member h3 {
+    margin: 5px 0;
+    color: #0ff;
+    font-family: 'Rock Salt', cursive;
+    font-size: 1.1rem;
+}
+
+.member p {
+    margin: 2px 0 10px 0;
+    color: #fff;
+    font-size: 0.95rem;
+}
+
+/* Concerts */
+#concerti .single {
+    background-color: #111;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px #0ff;
+    transition: 0.3s ease;
+}
+
+#concerti .single:hover {
+    box-shadow: 0 0 30px #0ff;
+    transform: scale(1.02);
+}
+
+#concerti .single h3 {
+    color: #0ff;
+    font-family: 'Rock Salt', cursive;
+    font-size: 1.6rem; /* titolo resta uguale */
+    margin-bottom: 12px;
+}
+
+#concerti .single p {
+    color: #fff;
+    font-size: 1.15rem; /* testo leggermente più grande */
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+#concerti .single img {
+    width: 100%;
+    max-width: 450px; /* immagine più grande */
+    border-radius: 10px;
+    margin: 20px 0;
+    object-fit: cover;
+    box-shadow: 0 0 20px #0ff5;
+}
+
+#concerti .single .address {
+    color: #0ff;
+    font-weight: bold;
+    font-size: 1.2rem; /* indirizzo più evidente */
+    margin-top: 5px;
+}
+
+#concerti .single a img {
+    transition: 0.3s ease;
+}
+
+#concerti .single a img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px #0ff;
+}
+
+
+/* Merch */
+.merch-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.merch-item {
+    background-color: #111;
+    padding: 15px;
+    border-radius: 5px;  /* aggiunto valore */
+    text-align: center;
+    flex: 1 1 200px;
+}
+
+/* Our Music */
+.single {
+    background-color: #111;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.single img {
+    width: 100%;
+    max-width: 400px;   /* limita la larghezza */
+    height: auto;       /* mantiene le proporzioni */
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.single h3 {
+    color: #0ff;
+    font-family: 'Rock Salt', cursive;
+    font-size: 1.8rem;  /* più grande dei paragrafi */
+    margin-bottom: 10px;
+}
+
+.single p {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.single .listen a {
+    color: #0ff;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.single .listen a:hover {
+    color: #fff;
+}
+
+/* Gallery */
+.gallery {
+    display: flex;
+    flex-direction: column; /* una sotto l’altra */
+    align-items: center;    /* centra orizzontalmente */
+    gap: 20px;              /* spazio tra le immagini */
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 80%;             /* stessa grandezza di prima, ma centrata */
+    max-width: 700px;       /* limite massimo per schermi grandi */
+    border-radius: 10px;
+    box-shadow: 0 0 15px #0ff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px #0ff;
+}
