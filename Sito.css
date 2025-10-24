@@ -1,4 +1,9 @@
-/* Base */
+/* ======================================= */
+/* Base (desktop + mobile) */
+* {
+    box-sizing: border-box; /* ✅ aggiunto per facilitare il responsive */
+}
+
 body {
     margin: 0;
     font-family: 'Arial', sans-serif;
@@ -18,7 +23,6 @@ header {
     overflow: hidden;
 }
 
-/* Sfondo sfocato con logo */
 header .overlay {
     position: absolute;
     top: 0; left: 0;
@@ -28,7 +32,6 @@ header .overlay {
     z-index: 1;
 }
 
-/* Titolo JOGS */
 header h1 {
     position: relative;
     z-index: 2;
@@ -40,7 +43,6 @@ header h1 {
     margin-bottom: 5px;
 }
 
-/* Sottotitolo */
 header p {
     position: relative;
     z-index: 2;
@@ -50,13 +52,13 @@ header p {
     margin-top: -5px;
 }
 
-
+/* Footer */
 footer {
-    text-align: center;         /* centra tutto */
-    background-color: #000;     /* mantiene il tema dark */
+    text-align: center;
+    background-color: #000;
     color: #fff;
     padding: 5px 20px 20px 20px;
-    border-top: 1px solid #0ff; /* leggero bordo neon */
+    border-top: 1px solid #0ff;
 }
 
 footer a {
@@ -133,8 +135,8 @@ h2 {
 
 .member {
     background-color: #111;
-    flex: 1 1 calc(33.333% - 40px); /* 3 per riga con spazio tra */
-    max-width: 300px; /* limita la larghezza massima */
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: 300px;
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -190,20 +192,20 @@ h2 {
 #concerti .single h3 {
     color: #0ff;
     font-family: 'Rock Salt', cursive;
-    font-size: 1.6rem; /* titolo resta uguale */
+    font-size: 1.6rem;
     margin-bottom: 12px;
 }
 
 #concerti .single p {
     color: #fff;
-    font-size: 1.15rem; /* testo leggermente più grande */
+    font-size: 1.15rem;
     line-height: 1.6;
     margin-bottom: 12px;
 }
 
 #concerti .single img {
     width: 100%;
-    max-width: 450px; /* immagine più grande */
+    max-width: 450px;
     border-radius: 10px;
     margin: 20px 0;
     object-fit: cover;
@@ -213,7 +215,7 @@ h2 {
 #concerti .single .address {
     color: rgb(255, 255, 255);
     font-weight: bold;
-    font-size: 1.2rem; /* indirizzo più evidente */
+    font-size: 1.2rem;
     margin-top: 5px;
 }
 
@@ -226,7 +228,6 @@ h2 {
     box-shadow: 0 0 25px #0ff;
 }
 
-
 /* Merch */
 .merch-items {
     display: flex;
@@ -238,7 +239,7 @@ h2 {
 .merch-item {
     background-color: #111;
     padding: 15px;
-    border-radius: 5px;  /* aggiunto valore */
+    border-radius: 5px;
     text-align: center;
     flex: 1 1 200px;
 }
@@ -254,8 +255,8 @@ h2 {
 
 .single img {
     width: 100%;
-    max-width: 400px;   /* limita la larghezza */
-    height: auto;       /* mantiene le proporzioni */
+    max-width: 400px;
+    height: auto;
     border-radius: 5px;
     margin: 10px 0;
 }
@@ -263,7 +264,7 @@ h2 {
 .single h3 {
     color: #0ff;
     font-family: 'Rock Salt', cursive;
-    font-size: 1.8rem;  /* più grande dei paragrafi */
+    font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
@@ -287,15 +288,15 @@ h2 {
 /* Gallery */
 .gallery {
     display: flex;
-    flex-direction: column; /* una sotto l’altra */
-    align-items: center;    /* centra orizzontalmente */
-    gap: 20px;              /* spazio tra le immagini */
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     margin-top: 20px;
 }
 
 .gallery img {
-    width: 80%;             /* stessa grandezza di prima, ma centrata */
-    max-width: 700px;       /* limite massimo per schermi grandi */
+    width: 80%;
+    max-width: 700px;
     border-radius: 10px;
     box-shadow: 0 0 15px #0ff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -304,4 +305,74 @@ h2 {
 .gallery img:hover {
     transform: scale(1.03);
     box-shadow: 0 0 25px #0ff;
+}
+
+/* ======================================= */
+/* MEDIA QUERIES MOBILE (aggiunte per smartphone) */
+@media (max-width: 768px) {
+
+    /* Nav impilato e bottoni più piccoli */
+    nav {
+        flex-direction: column; /* ✅ nuovo */
+        gap: 10px;              /* ✅ nuovo */
+    }
+
+    nav button {
+        width: 90%;             /* ✅ nuovo */
+        font-size: 1rem;        /* ✅ nuovo */
+        padding: 8px 10px;      /* ✅ nuovo */
+    }
+
+    /* Members: colonna singola */
+    .members {
+        flex-direction: column; /* ✅ nuovo */
+        gap: 15px;              /* ✅ nuovo */
+    }
+
+    .member {
+        flex: 1 1 100%;         /* ✅ nuovo */
+        max-width: 100%;        /* ✅ nuovo */
+    }
+
+    .member img {
+        aspect-ratio: auto;     /* ✅ nuovo per mobile */
+    }
+
+    /* Merch: colonna singola */
+    .merch-items {
+        flex-direction: column; /* ✅ nuovo */
+        gap: 15px;              /* ✅ nuovo */
+    }
+
+    .merch-item {
+        flex: 1 1 100%;         /* ✅ nuovo */
+    }
+
+    /* Gallery: immagini più larghe e scalate */
+    .gallery img {
+        width: 95%;             /* ✅ nuovo */
+        max-width: 100%;        /* ✅ nuovo */
+    }
+
+    /* Concerti e Music: padding più piccolo */
+    #concerti .single, .single {
+        padding: 15px;          /* ✅ nuovo */
+    }
+
+    /* Riduzione font per mobile */
+    h2 {
+        font-size: 1.5rem;      /* ✅ nuovo */
+    }
+
+    .single h3 {
+        font-size: 1.3rem;      /* ✅ nuovo */
+    }
+
+    .member h3 {
+        font-size: 1rem;        /* ✅ nuovo */
+    }
+
+    footer p {
+        font-size: 1rem;        /* ✅ nuovo */
+    }
 }
