@@ -14,7 +14,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #0ff;
+    color: #00ffff;
     overflow: hidden;
 }
 
@@ -34,7 +34,7 @@ header h1 {
     z-index: 2;
     font-family: 'Rock Salt', cursive;
     font-size: 4rem;
-    color: #00ffff;
+    color: #0ff;
     text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 40px #000000;
     letter-spacing: 3px;
     margin-bottom: 5px;
@@ -50,17 +50,18 @@ header p {
     margin-top: -5px;
 }
 
+
 footer {
     text-align: center;         /* centra tutto */
     background-color: #000;     /* mantiene il tema dark */
     color: #fff;
-    padding: 20px;
+    padding: 5px 20px 20px 20px;
     border-top: 1px solid #0ff; /* leggero bordo neon */
 }
 
 footer a {
     color: #0ff;
-    margin: 0 10px;
+    margin: 0 5px;
     text-decoration: none;
     transition: 0.3s;
 }
@@ -68,6 +69,11 @@ footer a {
 footer a:hover {
     color: #fff;
     text-decoration: underline;
+}
+
+footer p {
+    font-size: 1.3rem; 
+    font-weight: bold; 
 }
 
 /* Nav */
@@ -122,6 +128,7 @@ h2 {
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
+    margin-top: 40px;
 }
 
 .member {
@@ -204,7 +211,7 @@ h2 {
 }
 
 #concerti .single .address {
-    color: #0ff;
+    color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: 1.2rem; /* indirizzo più evidente */
     margin-top: 5px;
